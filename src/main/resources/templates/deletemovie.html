@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Delete movie</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Movie to delete:</h1>
+    <form th:action="@{/deletemovie}"
+          th:object="${movieform}" method="POST">
+        <p>Title:
+            <input type="text" th:field="*{title}" />
+        </p>
+        <p>Country:
+            <input type="text" th:field="*{country}"/>
+        </p>
+        <input class ="button-main-page" type="submit" value="Delete" />
+    </form>
+</div>
+<div th:if="${errorDel}" th:utext="${errorDel}"
+     style="color:red;font-style:italic;">
+</div>
+</body>
+</html>

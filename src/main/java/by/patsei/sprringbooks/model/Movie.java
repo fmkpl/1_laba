@@ -6,6 +6,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Movie {
-    private String title;
-    private String country;
+    public String title;
+    public String country;
+
+    public Movie(String title) {
+        this.title = title;
+    }
 }

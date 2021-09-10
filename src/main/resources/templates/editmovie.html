@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Movie to edit:</h1>
+    <form th:action="@{/editmovie}"
+          th:object="${movieform}" method="POST">
+        <p>Title:
+            <input type="text" th:field="*{title}" />
+        </p>
+        <p>Country:
+            <input type="text" th:field="*{country}"/>
+        </p>
+        <br/>
+        <p>New title:
+            <input type="text" th:field="*{newTitle}"/>
+        </p>
+        <p>New country:
+            <input type="text" th:field="*{newCountry}"/>
+        </p>
+        <input class ="button-main-page" type="submit" value="Edit" />
+    </form>
+</div>
+<div th:if="${errorEdit}" th:utext="${errorEdit}"
+     style="color:red;font-style:italic;">
+</div>
+</body>
+</html>

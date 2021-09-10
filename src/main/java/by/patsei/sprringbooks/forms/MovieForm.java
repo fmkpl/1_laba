@@ -6,6 +6,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MovieForm {
-    private String title;
-    private String country;
+    public String title;
+    public String country;
+
+    public String newTitle;
+    public String newCountry;
 }
